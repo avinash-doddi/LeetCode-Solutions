@@ -1,9 +1,8 @@
 from math import inf
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        maxx = -inf; summ = 0;
-        for i in nums:
-            summ += i;
-            maxx = max(maxx, summ);
-            summ = max(0, summ)
+        curr = maxx = nums[0]; n = len(nums)
+        for i in range(1,n):
+            curr = max(curr+nums[i], nums[i])
+            maxx = max(curr, maxx)
         return maxx
