@@ -13,6 +13,7 @@ class Solution:
             if (root == None): return
             arr.append(root.val);
             for i in root.children:
+                print(len(root.children), end = " ")
                 pre(i);
         pre(root)
         return arr;
