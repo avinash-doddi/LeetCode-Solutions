@@ -14,7 +14,7 @@ class Solution:
         while(self.k < n):
             if (self.i == r-1):
                 #self .i -= 1; self.j += 1;
-                self.traverse(strr, s, n, r, self.i, self.j);
+                self.traverse(strr,  s, n, r, self.i, self.j);
             else:
                 strr[self.i][self.j] = s[self.k];
                 self.i += 1; self.k += 1;
