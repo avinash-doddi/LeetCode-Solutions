@@ -9,7 +9,7 @@ class Solution:
     def convert(self, s: str, r: int) -> str:
         if (r == 1): return s
         n = len(s);
-        strr = [[""]*1000 for i in range(r)];
+        strr = [[""]*900 for i in range(r)];
         self.k = 0; self.i = 0; self.j = 0;
         while(self.k < n):
             if (self.i == r-1):
