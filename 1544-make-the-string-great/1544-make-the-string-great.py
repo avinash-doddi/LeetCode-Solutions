@@ -1,6 +1,7 @@
+from collections import deque
 class Solution:
     def makeGood(self, s: str) -> str:
-        stack = []; n = len(s)
+        stack = deque(); n = len(s)
         for i in range(n):
             if (stack):
                 if abs(ord(stack[-1]) - ord(s[i])) == 32:
