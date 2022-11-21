@@ -6,10 +6,10 @@ class Solution:
 		arr = [i for i in range(n,0,-1)]
 		ref = []; fin = []; target = n
 		def recur(arr, i, n, ref, target, fin):
-		    if (i == n or target < 0): return
 		    if (target == 0):
 		        fin.append(ref[:])
 		        return
+		    if (i == n or target < 0): return
 	        ref.append(arr[i])
 	        recur(arr, i, n, ref, target-arr[i], fin)
 	        ref.pop()
