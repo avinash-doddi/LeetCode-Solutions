@@ -1,16 +1,13 @@
 class Solution:
-    
-    def recur(self, candidates, i, n, target):
-        if (target == 0):
-            self.arr.append(self.ref[:]); 
-            return;
-        if (i >= n or target < 0): return;
-        self.ref.append(candidates[i]);
-        self.recur(candidates, i, n, target-candidates[i]);
-        self.ref.pop();
-        self.recur(candidates, i+1, n, target);
-        
-    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        self.arr = []; self.ref = []; n = len(candidates);
-        self.recur(candidates, 0, n, target);
-        return self.arr
+    def combinationSum(self, c: List[int], target: int) -> List[List[int]]:
+        def bfs(final, c, target, i, n, temp):
+            if (i == n or target < 0): return
+            if (target == 0):
+                final.append(temp[:]); return
+            temp.append(c[i]);
+            bfs(final, c, target - c[i], i, n, temp)
+            temp.pop()
+            bfs(final, c, target, i+1, n, temp)
+        n = len(c); temp = []; final = []
+        bfs(final, c, target, 0, n, temp)
+        return final
