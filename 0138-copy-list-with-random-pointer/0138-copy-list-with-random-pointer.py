@@ -16,7 +16,7 @@ class Solution:
         for i in maps.keys():
             if maps[i]:
                 maps[i] = count[maps[i]];
-        print(maps);count = {};
+        count = {};
         #create new linked list
         node = None; temp = head; temp1 = None; c = 0;
         while (temp):
@@ -27,12 +27,12 @@ class Solution:
             else:
                 node = Node(temp.val); temp1 = node; 
                 count[c] = temp1; c += 1; temp = temp.next;
-        temp = node; c = 0; print(count);
+        temp = node; c = 0; #print(count);
         while(temp):
             if maps[c] != None:
-                print(count[maps[c]])
+                #print(count[maps[c]])
                 temp.random = count[maps[c]];
-                print(temp.random.val)
+                #print(temp.random.val)
             c += 1; temp = temp.next;
         return node
             
