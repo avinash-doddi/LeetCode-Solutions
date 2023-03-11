@@ -6,11 +6,12 @@
 from sortedcontainers import SortedList
 class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
-        temp = None; s = SortedList()
+        temp = None; s = []
         for i in lists:
             temp = i;
             while(temp != None):
-                s.add(temp.val); temp = temp.next;
+                s.append(temp.val); temp = temp.next;
+        s.sort()
         if (len(s) == 0): return None;
         head = ListNode(s[0]); temp = head;
         for i in range(1,len(s)):
