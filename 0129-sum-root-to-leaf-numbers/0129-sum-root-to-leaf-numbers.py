@@ -20,7 +20,7 @@ class Solution:
         traverse(root, arr, summ)
         return sum(self.sm)
 """
-C++ EXCEL SOLUTN
+C++ EXCEL OPT SOLUTN (for nextime reference)
 class Solution {
 public:
     int sumNumbers(TreeNode* root,int sum=0) {
@@ -30,6 +30,7 @@ public:
             return sum;
         return sumNumbers(root->left,sum)+sumNumbers(root->right,sum);
     }
-};"""
+};
+"""
             
             
