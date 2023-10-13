@@ -28,7 +28,6 @@ class Solution:
                 right = mid;
                 
         if peak == target: return peak_index
-        print("at peak calls = ", calls)
         
         # check leftside of array::
         left = 0; right = peak_index;
@@ -37,7 +36,6 @@ class Solution:
             if mid < 0 or mid > peak_index: break
             curr = m.get(mid); calls += 1;
             if curr == target: 
-                print("left calls = ", calls)
                 return mid;
             #else::
             if curr < target:
@@ -51,17 +49,14 @@ class Solution:
         while left <= right:
             mid = left + (right - left)//2;
             if mid < peak_index or mid > n-1: break
-            curr = m.get(mid); calls += 1;
+            curr = m.get(mid);
             if curr == target:
-                print("right calls = ", calls)
                 return mid;
             #else::
             if curr > target:
                 left = mid+1;
             else:
                 right = mid-1;
-            
-        print("overall calls = ", calls)
         
         #if element not present::
         return -1
